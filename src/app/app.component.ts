@@ -2,9 +2,18 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+  
+  <router-outlet><h1> {{ title }} </h1></router-outlet>
+  <app-food-list></app-food-list>
+  `,
 })
 export class AppComponent {
   title = 'DataDelivery';
 }
+
+
+/**
+ * 
+ */
+ let title : string =   "Exercicos de Dados"

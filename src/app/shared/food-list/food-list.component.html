@@ -1,0 +1,17 @@
+<section>
+
+    <label for="Datainput"> {{ "Novo Item " | uppercase }}</label><br><br>
+    <input id="Datainput" #InpultValue [(ngModel)]="InputValue" value="{{InputValue }}"><br><br>
+
+
+    <button (click)="foodListAdd(InpultValue.value) ; ComparaListas()">Adcionar Item a Lista</button>
+
+
+    <h2>Lista de Alimentos</h2>
+    <ul *ngFor="let item of foodList">
+        <li>{{ item }}</li>
+    </ul>
+
+
+
+</section>
