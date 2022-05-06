@@ -1,15 +1,37 @@
 <section>
+    <label>Filtrar Dados</label>
+    <br>
+    <br>
+    <input #campoFiltro (keyup)="Filtrar(campoFiltro.value)">
+    <br>
+    <br>
+    <p >{{ fitrado }}</p>
 
-    <label for="Datainput"> {{ "Novo Item " | uppercase }}</label><br><br>
+
+
+    <label for="Datainput"> {{ "Adcionar Item " | uppercase }}</label><br><br>
     <input id="Datainput" #InpultValue [(ngModel)]="InputValue" value="{{InputValue }}"><br><br>
 
 
-    <button (click)="foodListAdd(InpultValue.value) ; ComparaListas()">Adcionar Item a Lista</button>
+    <button (click)="foodListAdd(InpultValue.value)">Adcionar Item a Lista</button>
 
 
     <h2>Lista de Alimentos</h2>
+
     <ul *ngFor="let item of foodList">
         <li>{{ item }}</li>
+    </ul>
+
+    <button (click)="ImprimeTamanho()"> Tamanho </button>
+    <br>
+    <br>
+
+
+    <p>Lista do Server DB</p>
+
+
+    <ul *ngFor="let item of deliveryData">
+        <li>{{ item.name }}</li>
     </ul>
 
 
